@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rick and Morty | Guia de Personagens</title>
+  <meta name="description" content="Explore os personagens de Rick and Morty com dados em tempo real da API oficial." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__content">
+      <a href="#inicio" class="logo">Rick <span>&amp;</span> Morty</a>
+      <nav class="nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#numeros">Em tempo real</a>
+        <a href="#personagens">Personagens</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero__content">
+        <h1>Wubba Lubba <span>Dub Dub!</span></h1>
+        <p>Viaje pelo multiverso e conheça os personagens da série que virou febre mundial. Todos os dados vêm direto da API oficial, em tempo real.</p>
+        <a href="#personagens" class="btn">Explorar personagens</a>
+      </div>
+    </section>
+
+    <section class="about container" id="sobre">
+      <h2 class="section-title">Sobre a série</h2>
+      <p>
+        <strong>Rick and Morty</strong> estreou em 2013 e acompanha o cientista genial e instável Rick Sanchez e seu neto Morty em aventuras
+        por dimensões e planetas absurdos. Com humor ácido e ficção científica, virou um dos desenhos mais comentados das últimas décadas.
+      </p>
+    </section>
+
+    <section class="stats container" id="numeros">
+      <h2 class="section-title">Multiverso em números</h2>
+      <div class="stats__grid">
+        <div class="stat">
+          <span class="stat__value" id="stat-characters">...</span>
+          <span class="stat__label">Personagens</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" id="stat-locations">...</span>
+          <span class="stat__label">Locais</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" id="stat-episodes">...</span>
+          <span class="stat__label">Episódios</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="characters container" id="personagens">
+      <h2 class="section-title">Personagens</h2>
+
+      <form class="filters" id="filters" autocomplete="off">
+        <input type="search" id="search" placeholder="Buscar por nome (ex: Rick)" aria-label="Buscar personagem por nome" />
+        <select id="status" aria-label="Filtrar por status">
+          <option value="">Todos os status</option>
+          <option value="alive">Vivo</option>
+          <option value="dead">Morto</option>
+          <option value="unknown">Desconhecido</option>
+        </select>
+      </form>
+
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+
+      <!-- Os cards são criados pelo JavaScript -->
+      <div class="cards" id="cards"></div>
+
+      <div class="pagination" id="pagination">
+        <button class="btn btn--small" id="prev" disabled>&larr; Anterior</button>
+        <span id="page-info">Página 1</span>
+        <button class="btn btn--small" id="next" disabled>Próxima &rarr;</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Projeto feito com HTML, CSS e JavaScript • Dados: <a href="https://rickandmortyapi.com/" target="_blank" rel="noopener">rickandmortyapi.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
